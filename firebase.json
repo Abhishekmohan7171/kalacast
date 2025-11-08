@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "kalacast-app",
+    "public": "dist/kalacast/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
