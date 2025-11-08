@@ -1,0 +1,31 @@
+<section class="pitch">
+  <header class="pitch__header">
+    <span class="pitch__label">01</span>
+    <span class="pitch__hashtag">#talentoverdias</span>
+    <span class="pitch__link">yourhead</span>
+  </header>
+
+  <div class="pitch__content">
+    <h2 class="pitch__title">your dream deserves a fair chance</h2>
+    <p class="pitch__subtitle">
+      I employed responsive designskills to maintain consistency across all devices.
+    </p>
+
+    <div class="pitch__timeline">
+      @for (card of cards; track card.number) {
+        <div class="pitch__card">
+          <div class="pitch__card-number">{{ card.number }}</div>
+          <div class="pitch__card-content">
+            <div class="pitch__card-icons">
+              <div class="icon"></div>
+              <div class="icon"></div>
+              <div class="icon"></div>
+            </div>
+            <h3 class="pitch__card-title">{{ card.title }}</h3>
+            <p class="pitch__card-description">{{ card.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

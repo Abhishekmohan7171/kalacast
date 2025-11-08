@@ -1,0 +1,64 @@
+<section class="pricing">
+  <div class="pricing__content">
+    <h2 class="pricing__title">BIG OR SMALL?<br>I HAVE A PLAN.</h2>
+
+    <div class="pricing__toggle">
+      <button 
+        class="toggle-btn"
+        [class.active]="!isAnnual()"
+        (click)="togglePricing()"
+        [attr.aria-pressed]="!isAnnual()"
+        aria-label="Monthly pricing">
+        monthly
+      </button>
+      <div class="toggle-switch" (click)="togglePricing()" role="switch" [attr.aria-checked]="isAnnual()">
+        <div class="toggle-knob" [class.active]="isAnnual()"></div>
+      </div>
+      <button 
+        class="toggle-btn"
+        [class.active]="isAnnual()"
+        (click)="togglePricing()"
+        [attr.aria-pressed]="isAnnual()"
+        aria-label="Annual pricing">
+        annual
+      </button>
+    </div>
+
+    <div class="pricing__cards">
+      @for (plan of plans; track plan.name) {
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <div class="pricing-card__price">
+              <span class="currency">$</span>
+              <span class="amount">{{ isAnnual() ? plan.annualPrice : plan.monthlyPrice }}</span>
+              <span class="period">/{{ isAnnual() ? 'annual' : 'month' }}</span>
+            </div>
+            <button class="expand-btn" aria-label="Expand plan details">+</button>
+          </div>
+
+          <div class="pricing-card__body">
+            <div class="pricing-card__name">
+              {{ plan.name }}
+              @if (plan.badge) {
+                <span class="badge">{{ plan.badge }}</span>
+              }
+            </div>
+            <p class="pricing-card__description">{{ plan.description }}</p>
+
+            <div class="pricing-card__features">
+              <h4>what's included</h4>
+              <ul>
+                @for (feature of plan.features; track feature.text) {
+                  <li [class.disabled]="!feature.included">
+                    <span class="checkmark">{{ feature.included ? '✓' : '✗' }}</span>
+                    {{ feature.text }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="faq">
+  <header class="faq__header">
+    <span class="label">03</span>
+    <span class="hashtag">#talentoverdias</span>
+    <span class="link">yourhead</span>
+  </header>
+
+  <div class="faq__content">
+    <h2 class="faq__title">FREQUENTLY<br>ASKED QUESTIONS</h2>
+
+    <div class="faq__list">
+      @for (faq of faqs; track faq.id; let i = $index) {
+        <div class="faq-item" [class.open]="openIndex() === i">
+          <button 
+            class="faq-item__question"
+            (click)="toggleFaq(i)"
+            [attr.aria-expanded]="openIndex() === i"
+            [attr.aria-controls]="'faq-answer-' + i">
+            <span class="faq-item__id">{{ faq.id }}</span>
+            <span class="faq-item__text">{{ faq.question }}</span>
+            <span class="faq-item__icon">{{ openIndex() === i ? '−' : '+' }}</span>
+          </button>
+          @if (openIndex() === i) {
+            <div class="faq-item__answer" [id]="'faq-answer-' + i">
+              <p>{{ faq.answer }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

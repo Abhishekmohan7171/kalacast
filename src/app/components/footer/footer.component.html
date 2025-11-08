@@ -1,0 +1,35 @@
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__section">
+      <h3 class="footer__label">brand in two words.</h3>
+      <p class="footer__subtitle">cast it mate</p>
+    </div>
+    <div class="footer__section footer__section--center">
+      <p class="footer__bio">
+        BASED IN USA, I AM AN INNOVATIVE DESIGNER AND DIGITAL ARTIST. MY PASSION FOR MINIMALIST AESTHETICS, ELEGANT TYPOGRAPHY, AND INTUITIVE DESIGN IS EVIDENT IN MY WORK.
+      </p>
+    </div>
+    <div class="footer__section">
+      <h3 class="footer__label">style our defense</h3>
+      <p class="footer__subtitle">cast it mate</p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="footer__social">
+      @for (link of socialLinks; track link.name) {
+        <a 
+          [href]="link.url" 
+          class="footer__link"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.name">
+          {{ link.name }} <span class="arrow">↗</span>
+        </a>
+      }
+    </div>
+    <div class="footer__copyright">
+      <p>&copy; {{ currentYear }} kalacast. all rights reserved.</p>
+    </div>
+  </div>
+</footer>
