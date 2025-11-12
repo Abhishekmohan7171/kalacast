@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 
 @Component({
   selector: 'app-pricing',
@@ -8,58 +8,73 @@ import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PricingComponent {
-  isAnnual = signal(false);
+  isProducer = signal(false);
 
-  plans = [
+  actorPlans = [
     {
-      name: 'starter plan',
-      monthlyPrice: 499,
-      annualPrice: 5390,
-      description: 'Our basic pricing plan is designed to offer extraordinary value and features.',
+      name: 'monthly plan',
+      price: 222,
+      period: 'month',
+      description: 'your starter plan to showcase your talent.',
       features: [
-        { text: 'all talentos selected', included: true },
-        { text: 'unlimited requests', included: true },
-        { text: 'unlimited revisions', included: true },
-        { text: 'project management', included: true },
-        { text: 'priority for services', included: false },
-        { text: 'peace or cancel anytime', included: false },
-        { text: 'email support', included: false }
+        { text: 'high visibility in searches', included: true },
+        { text: 'upload up to 10 audition tapes', included: true },
+        { text: 'get free masterclass', included: true },
+        { text: 'full analytics access', included: true },
+        { text: 'video support', included: true },
+        { text: 'cancel anytime', included: true }
       ]
     },
     {
-      name: 'growth plan',
-      monthlyPrice: 799,
-      annualPrice: 8630,
-      badge: 'PRO',
-      description: 'Our pro pricing plan is designed for a businesses with advanced features.',
-      features: [
-        { text: 'all talentos selected', included: true },
-        { text: 'unlimited requests', included: true },
-        { text: 'unlimited revisions', included: true },
-        { text: 'project management', included: true },
-        { text: 'priority for services', included: true },
-        { text: 'peace or cancel anytime', included: true },
-        { text: 'email support', included: false }
-      ]
-    },
-    {
-      name: 'premium plan',
-      monthlyPrice: 1299,
-      annualPrice: 14030,
+      name: 'yearly plan',
+      price: 2222,
+      period: 'year',
       description: 'Our plus pricing plan is designed for a corporate with premium support.',
       features: [
-        { text: 'all talentos selected', included: true },
-        { text: 'unlimited requests', included: true },
-        { text: 'unlimited revisions', included: true },
-        { text: 'project management', included: true },
-        { text: 'priority for services', included: true },
-        { text: 'peace or cancel anytime', included: true },
-        { text: 'email support', included: true }
+        { text: 'high visibility in searches', included: true },
+        { text: 'upload up to 10 audition tapes', included: true },
+        { text: 'get free poster shots', included: true },
+        { text: 'full analytics access', included: true },
+        { text: 'video support', included: true },
+        { text: 'cancel anytime', included: true }
       ]
     }
   ];
 
-  togglePricing(): void {
-    this.isAnnual.update(value => !value);
+  producerPlans = [
+    {
+      name: 'monthly plan',
+      price: 2222,
+      period: 'month',
+      description: 'your complete access to cast without limits.',
+      features: [
+        { text: 'get free casting suggestions', included: true },
+        { text: 'use short audition scripts', included: true },
+        { text: 'shortlist casts', included: true },
+        { text: 'priority support', included: true },
+        { text: 'email support', included: true },
+        { text: 'cancel anytime', included: true }
+      ]
+    },
+    {
+      name: 'yearly plan',
+      price: 22222,
+      period: 'year',
+      description: 'Our plus pricing plan is designed for a corporate with premium support.',
+      features: [
+        { text: 'high visibility in searches', included: true },
+        { text: 'upload up to 10 audition tapes', included: true },
+        { text: 'get free poster shots', included: true },
+        { text: 'full analytics access', included: true },
+        { text: 'video support', included: true },
+        { text: 'cancel anytime', included: true }
+      ]
+    }
+  ];
+
+  currentPlans = computed(() => this.isProducer() ? this.producerPlans : this.actorPlans);
+
+  toggleUserType(): void {
+    this.isProducer.update(value => !value);
   }
 }

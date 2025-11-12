@@ -1,11 +1,7 @@
+// Styles now handled by Tailwind CSS classes in the template
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
-  position: relative;
-  background-color: #000000;
+  // Keep empty or add any custom styles not covered by Tailwind
+  background-color: transparent;
 
   &__header {
     display: flex;
@@ -70,85 +66,114 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: -4rem;
   }
 
   &__title {
     font-family: 'Jersey 10', sans-serif;
-    font-size: clamp(3rem, 15vw, 12rem);
+    font-size: clamp(3rem, 15vw, 20rem);
     font-weight: 400;
     color: #4a4a4a;
     text-transform: lowercase;
-    letter-spacing: 0.02em;
-    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
     line-height: 0.9;
+    margin-bottom: 4rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+
+    @media (min-width: 768px) {
+      font-size: clamp(8rem, 20vw, 20rem);
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: clamp(10rem, 25vw, 22rem);
+    }
+    
+    @media (min-width: 1440px) {
+      font-size: clamp(12rem, 30vw, 26rem);
+    }
   }
 
   &__features {
     display: flex;
-    gap: 4rem;
-    margin-top: 2rem;
+    gap: 6rem;
+    margin-top: 0;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
   }
 
-  &__feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    max-width: 200px;
+  &__tagline {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: #888888;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    line-height: 1.6;
+    text-transform: lowercase;
+    text-align: center;
+    padding: 0 2rem;
   }
+}
 
-  &__feature-icon {
-    width: 48px;
-    height: 48px;
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 180px;
+
+  &__icon {
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    background-color: transparent;
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
+    }
+
+    &--green {
+      border-color: #00ff00;
+      color: #00ff00;
+    }
+
+    &--white {
+      border-color: #ffffff;
       color: #ffffff;
     }
 
+    &--blue {
+      border-color: #00bfff;
+      color: #00bfff;
+    }
+
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
       transform: scale(1.1);
     }
   }
 
-  &__feature-text {
-    font-size: 0.9rem;
-    color: #cccccc;
+  &__text {
     text-align: center;
-    line-height: 1.4;
-
-    strong {
-      display: block;
-      color: #ffffff;
-      text-transform: lowercase;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
-    }
   }
 
-  &__tagline {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
+  &__title {
+    font-size: 0.95rem;
+    color: #ffffff;
+    text-transform: lowercase;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
 
-    p {
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      color: #888888;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.5;
-      text-transform: lowercase;
-    }
+  &__subtitle {
+    font-size: 0.85rem;
+    color: #888888;
+    text-transform: lowercase;
   }
 }
 
@@ -208,15 +233,23 @@
       margin-top: 1.5rem;
     }
 
-    &__feature {
-      max-width: 100%;
-    }
-
     &__tagline {
-      padding: 1.5rem 0;
+      margin-top: 2rem;
+      padding: 0 1rem;
+      font-size: 0.9rem;
+    }
+  }
 
-      p {
-        font-size: 1rem;
+  .feature {
+    max-width: 100%;
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+
+      svg {
+        width: 24px;
+        height: 24px;
       }
     }
   }

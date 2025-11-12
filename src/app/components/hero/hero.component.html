@@ -1,62 +1,59 @@
-<section class="hero">
-  <header class="hero__header">
-    <div class="hero__time">{{ currentTime() }}</div>
-    <div class="hero__dots">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+<section class="min-h-screen flex flex-col justify-between p-4 md:p-8 bg-transparent">
+  <header class="flex justify-between items-center mb-8">
+    <time class="font-jersey text-sm md:text-base text-white">{{ currentTime() }}</time>
+    <div class="flex gap-2">
+      <span class="w-2 h-2 rounded-full bg-gray-500"></span>
+      <span class="w-2 h-2 rounded-full bg-gray-500"></span>
     </div>
-    <button class="hero__cta" aria-label="Kalacast">kalacast</button>
+    <button class="px-4 py-2 md:px-6 md:py-2 bg-white text-black rounded-full font-jersey text-sm md:text-base hover:bg-gray-200 transition-colors cursor-pointer" aria-label="Kalacast" (click)="openApp()">kalacast</button>
   </header>
 
-  <div class="hero__content">
-    <h1 class="hero__title">kalacast</h1>
+  <div class="flex-1 flex flex-col justify-center items-center text-center -mt-16">
+    <h1 class="font-jersey text-[3rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] xl:text-[20rem] 2xl:text-[26rem] font-normal text-medium-gray lowercase leading-[0.9] mb-16 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">kalacast</h1>
 
-    <div class="hero__features">
-      <div class="hero__feature">
-        <div class="hero__feature-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <div class="flex flex-wrap gap-8 md:gap-16 lg:gap-24 justify-center items-start">
+      <div class="flex flex-col items-center gap-3 max-w-[200px]">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-green-500 flex items-center justify-center text-green-500">
+          <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <div class="text-center">
+          <div class="font-jersey text-sm md:text-base text-white lowercase">based in cochin</div>
+          <div class="font-jersey text-xs md:text-sm text-light-gray lowercase">kerala</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-3 max-w-[200px]">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-white flex items-center justify-center text-white">
+          <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="10" r="3"/>
             <path d="M12 2v2m0 16v2M6.34 6.34l-1.42-1.42M19.08 19.08l-1.42-1.42M2 12h2m16 0h2M6.34 17.66l-1.42 1.42M19.08 4.92l-1.42 1.42"/>
             <path d="M12 14c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6z"/>
           </svg>
         </div>
-        <p class="hero__feature-text">
-          <strong>based in cochin</strong><br>
-          kerala
-        </p>
-      </div>
-
-      <div class="hero__feature">
-        <div class="hero__feature-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20"/>
-          </svg>
+        <div class="text-center">
+          <div class="font-jersey text-sm md:text-base text-white lowercase">available all around</div>
+          <div class="font-jersey text-xs md:text-sm text-light-gray lowercase">the world</div>
         </div>
-        <p class="hero__feature-text">
-          <strong>available all around</strong><br>
-          the world
-        </p>
       </div>
 
-      <div class="hero__feature">
-        <div class="hero__feature-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="flex flex-col items-center gap-3 max-w-[200px]">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-blue-500 flex items-center justify-center text-blue-500">
+          <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
             <polyline points="22 4 12 14.01 9 11.01"/>
           </svg>
         </div>
-        <p class="hero__feature-text">
-          <strong>verified profiles</strong><br>
-          trust matters
-        </p>
+        <div class="text-center">
+          <div class="font-jersey text-sm md:text-base text-white lowercase">verified profiles</div>
+          <div class="font-jersey text-xs md:text-sm text-light-gray lowercase">trust matters</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="hero__tagline">
-    <p>a world where every actor is seen, every producer is heard, and every story finds its perfect face</p>
-  </div>
+  <!-- <p class="hero__tagline">
+    a world where every actor is seen, every producer is heard, and every story finds its perfect face
+  </p> -->
 </section>

@@ -1,7 +1,7 @@
 .about {
   min-height: 100vh;
   padding: 3rem 2rem;
-  background-color: #000000;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
 
@@ -51,56 +51,17 @@
   &__image {
     width: 100%;
     max-width: 500px;
-    aspect-ratio: 3/4;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0a0a0a;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-}
-
-.director-silhouette {
-  width: 80%;
-  height: 80%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
-  clip-path: polygon(
-    30% 20%,
-    70% 20%,
-    70% 30%,
-    60% 30%,
-    60% 40%,
-    70% 40%,
-    70% 80%,
-    30% 80%,
-    30% 40%,
-    40% 40%,
-    40% 30%,
-    30% 30%
-  );
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 40%;
-    height: 15%;
-    background-color: #444444;
-    top: 15%;
-    left: 30%;
-    border-radius: 50% 50% 0 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 8%;
-    background-color: #555555;
-    bottom: 10%;
-    left: 20%;
-    transform: rotate(-10deg);
+  &__director-image {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    filter: brightness(0.9);
+    border-radius: 8px;
   }
 }
 

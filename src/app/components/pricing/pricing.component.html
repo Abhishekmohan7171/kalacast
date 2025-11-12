@@ -1,37 +1,37 @@
 <section class="pricing">
   <div class="pricing__content">
-    <h2 class="pricing__title">BIG OR SMALL?<br>I HAVE A PLAN.</h2>
+    <h2 class="pricing__title">big or small?<br>i have a plan.</h2>
 
     <div class="pricing__toggle">
       <button 
         class="toggle-btn"
-        [class.active]="!isAnnual()"
-        (click)="togglePricing()"
-        [attr.aria-pressed]="!isAnnual()"
-        aria-label="Monthly pricing">
-        monthly
+        [class.active]="!isProducer()"
+        (click)="toggleUserType()"
+        [attr.aria-pressed]="!isProducer()"
+        aria-label="Actor pricing">
+        actors
       </button>
-      <div class="toggle-switch" (click)="togglePricing()" role="switch" [attr.aria-checked]="isAnnual()">
-        <div class="toggle-knob" [class.active]="isAnnual()"></div>
+      <div class="toggle-switch" (click)="toggleUserType()" role="switch" [attr.aria-checked]="isProducer()">
+        <div class="toggle-knob" [class.active]="isProducer()"></div>
       </div>
       <button 
         class="toggle-btn"
-        [class.active]="isAnnual()"
-        (click)="togglePricing()"
-        [attr.aria-pressed]="isAnnual()"
-        aria-label="Annual pricing">
-        annual
+        [class.active]="isProducer()"
+        (click)="toggleUserType()"
+        [attr.aria-pressed]="isProducer()"
+        aria-label="Producer pricing">
+        producers
       </button>
     </div>
 
     <div class="pricing__cards">
-      @for (plan of plans; track plan.name) {
+      @for (plan of currentPlans(); track plan.name) {
         <div class="pricing-card">
           <div class="pricing-card__header">
             <div class="pricing-card__price">
-              <span class="currency">$</span>
-              <span class="amount">{{ isAnnual() ? plan.annualPrice : plan.monthlyPrice }}</span>
-              <span class="period">/{{ isAnnual() ? 'annual' : 'month' }}</span>
+              <span class="currency">₹</span>
+              <span class="amount">{{ plan.price }}</span>
+              <span class="period">/{{ plan.period }}</span>
             </div>
             <button class="expand-btn" aria-label="Expand plan details">+</button>
           </div>
@@ -39,9 +39,6 @@
           <div class="pricing-card__body">
             <div class="pricing-card__name">
               {{ plan.name }}
-              @if (plan.badge) {
-                <span class="badge">{{ plan.badge }}</span>
-              }
             </div>
             <p class="pricing-card__description">{{ plan.description }}</p>
 
