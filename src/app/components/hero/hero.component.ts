@@ -32,8 +32,11 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.currentTime.set(`${hours}:${minutes}:${seconds}`);
   }
 
-  openApp(): void {
-    console.log('open app');
-    window.open('https://yberhood-castrole.web.app/', '_blank', 'noopener , noreferrer');
+  openApp() {
+    try {
+      window.open('https://yberhood-castrole.web.app/', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
