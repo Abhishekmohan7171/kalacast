@@ -9,6 +9,7 @@ import { MissionSummaryComponent } from './components/mission-summary/mission-su
 import { PricingComponent } from './components/pricing/pricing.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RevealOnScrollDirective } from './directives/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MissionSummaryComponent,
     PricingComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    RevealOnScrollDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
