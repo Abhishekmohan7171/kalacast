@@ -44,6 +44,44 @@
     letter-spacing: 0.02em;
   }
 
+  /* CTA block spanning full width */
+  &__cta {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 0 2rem;
+    gap: 2rem;
+  }
+
+  &__cta-title {
+    font-family: 'Jersey 10', sans-serif;
+    text-transform: lowercase;
+    color: #bfbfbf;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+    font-size: clamp(3rem, 10vw, 8rem);
+  }
+
+  &__cta-button {
+    font-family: 'Jersey 10', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover { background-color: #e5e5e5; }
+    &:active { transform: translateY(1px); }
+    &:focus { outline: 2px solid #ffffff; outline-offset: 2px; }
+  }
+
   &__bottom {
     display: flex;
     justify-content: space-between;
@@ -121,6 +159,10 @@
       font-size: clamp(0.95rem, 2vw, 1.15rem);
     }
 
+    &__cta-title {
+      font-size: clamp(2.5rem, 12vw, 6rem);
+    }
+  
     &__bottom {
       flex-direction: column;
       gap: 1.5rem;
@@ -154,6 +196,10 @@
     &__bio {
       font-size: 0.9rem;
       line-height: 1.5;
+    }
+
+    &__cta-title {
+      font-size: clamp(2rem, 10vw, 4rem);
     }
 
     &__bottom {

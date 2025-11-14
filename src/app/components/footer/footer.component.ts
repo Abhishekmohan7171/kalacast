@@ -15,4 +15,12 @@ export class FooterComponent {
     { name: 'dribbble', url: 'https://dribbble.com' },
     { name: 'twitter', url: 'https://twitter.com' }
   ];
+
+  openApp() {
+    try {
+      window.open('https://yberhood-castrole.web.app/', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
