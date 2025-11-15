@@ -30,7 +30,7 @@
           <div class="pricing-card__header">
             <div class="pricing-card__price">
               <span class="currency">₹</span>
-              <span class="amount">{{ plan.price }}</span>
+              <span class="amount">&#8377;{{ plan.price | number:'1.0-0' }}</span>
               <span class="period">/{{ plan.period }}</span>
             </div>
             <button class="expand-btn" aria-label="Expand plan details">+</button>
@@ -41,6 +41,9 @@
               {{ plan.name }}
             </div>
             <p class="pricing-card__description">{{ plan.description }}</p>
+            @if (plan.saveText) {
+              <p class="pricing-card__save">{{ plan.saveText }}</p>
+            }
 
             <div class="pricing-card__features">
               <h4>what's included</h4>

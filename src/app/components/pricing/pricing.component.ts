@@ -1,8 +1,9 @@
 import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-pricing',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,25 +19,22 @@ export class PricingComponent {
       description: 'your starter plan to showcase your talent.',
       features: [
         { text: 'high visibility in searches', included: true },
-        { text: 'upload up to 10 audition tapes', included: true },
-        { text: 'get free masterclass', included: true },
-        { text: 'full analytics access', included: true },
-        { text: 'video support', included: true },
-        { text: 'cancel anytime', included: true }
+        { text: 'upload up to 10 audition reels', included: true },
+        { text: 'ad-free experience', included: true },
+        { text: 'full analytics access', included: true }
       ]
     },
     {
       name: 'yearly plan',
       price: 2222,
       period: 'year',
-      description: 'Our plus pricing plan is designed for a corporate with premium support.',
+      description: 'get all premium features with yearly savings.',
+      saveText: 'save ₹442 vs monthly',
       features: [
         { text: 'high visibility in searches', included: true },
-        { text: 'upload up to 10 audition tapes', included: true },
-        { text: 'get free poster shots', included: true },
-        { text: 'full analytics access', included: true },
-        { text: 'video support', included: true },
-        { text: 'cancel anytime', included: true }
+        { text: 'upload up to 10 audition reels', included: true },
+        { text: 'ad-free experience', included: true },
+        { text: 'full analytics access', included: true }
       ]
     }
   ];
@@ -48,26 +46,23 @@ export class PricingComponent {
       period: 'month',
       description: 'your complete access to cast without limits.',
       features: [
-        { text: 'get free casting suggestions', included: true },
-        { text: 'use short audition scripts', included: true },
-        { text: 'shortlist casts', included: true },
-        { text: 'priority support', included: true },
-        { text: 'email support', included: true },
-        { text: 'cancel anytime', included: true }
+        { text: 'ad-free casting experience', included: true },
+        { text: 'full actor database access', included: true },
+        { text: 'unlimited usage', included: true },
+        { text: 'priority support', included: true }
       ]
     },
     {
       name: 'yearly plan',
       price: 22222,
       period: 'year',
-      description: 'Our plus pricing plan is designed for a corporate with premium support.',
+      description: 'get the same features with yearly savings.',
+      saveText: 'save ₹4,442 vs monthly',
       features: [
-        { text: 'high visibility in searches', included: true },
-        { text: 'upload up to 10 audition tapes', included: true },
-        { text: 'get free poster shots', included: true },
-        { text: 'full analytics access', included: true },
-        { text: 'video support', included: true },
-        { text: 'cancel anytime', included: true }
+        { text: 'ad-free casting experience', included: true },
+        { text: 'full actor database access', included: true },
+        { text: 'unlimited usage', included: true },
+        { text: 'priority support', included: true }
       ]
     }
   ];
