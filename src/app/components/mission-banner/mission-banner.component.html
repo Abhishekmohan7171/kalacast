@@ -1,23 +1,23 @@
-<section class="min-h-[60vh] md:min-h-screen flex flex-col justify-start md:justify-between p-4 md:p-8 bg-transparent">
-  <div class="flex-1 flex flex-col items-center justify-center w-full max-w-[95%] mx-auto">
-    <h2 class="font-jersey text-[31.2px] md:text-4xl text-light-gray text-center w-full mb-3 md:mb-6 leading-snug lowercase px-4">
+<section class="min-h-[60vh] md:min-h-screen flex flex-col justify-start md:justify-between p-3 md:p-8 bg-transparent">
+  <div class="flex-1 flex flex-col-reverse md:flex-col items-center justify-center w-full max-w-[95%] mx-auto gap-3 md:gap-6">
+    <!-- Heading: large and left-aligned on mobile like the mock -->
+    <h2 class="font-jersey text-[clamp(2rem,9.2vw,3rem)] md:text-4xl text-white text-left md:text-center w-full leading-tight lowercase px-2 md:px-4">
       a world where every actor is seen, every producer is heard, and every story finds its perfect face
     </h2>
-    
+
+    <!-- Image first on mobile, fits in a card -->
     <div class="w-full flex justify-center items-center px-2">
       <img
         src="assets/images/hero.jpg"
         alt="Actors creating content with cameras and equipment"
-        class="w-full h-[50vh] sm:h-[55vh] md:h-auto object-contain rounded-lg brightness-90 contrast-110"
+        class="w-full h-40 sm:h-48 md:h-auto object-cover rounded-lg brightness-90 contrast-110"
       />
     </div>
   </div>
 
-  <!-- <footer class="mt-8 p-4 md:p-8">
-    <div class="flex justify-between items-center w-full">
-      <span class="font-jersey text-sm text-gray-500 lowercase hover:text-white transition-colors cursor-pointer">01</span>
-      <span class="font-jersey text-sm text-gray-500 lowercase hover:text-white transition-colors cursor-pointer">#talentoverbias</span>
-      <span class="font-jersey text-sm text-gray-500 lowercase hover:text-white transition-colors cursor-pointer">yberhood</span>
-    </div>
-  </footer> -->
+  <!-- Footer row: hashtag left, brand right -->
+  <div class="w-full max-w-[95%] mx-auto px-2 mt-2 md:mt-4 flex justify-between items-center text-[11px] md:text-sm text-gray-500 font-jersey lowercase">
+    <span class="hover:text-white transition-colors cursor-pointer">#talentoverbias</span>
+    <span class="hover:text-white transition-colors cursor-pointer">yberhood</span>
+  </div>
 </section>
