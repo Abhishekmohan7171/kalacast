@@ -17,9 +17,9 @@
           <div class="pitch__card-number">{{ card.number }}</div>
           <div class="pitch__card-content">
             <div class="pitch__card-icons">
-              <div class="icon"></div>
-              <div class="icon"></div>
-              <div class="icon"></div>
+              @for (img of card.icons; track img) {
+                <img class="icon-img" [src]="img" alt="icon" />
+              }
             </div>
             <h3 class="pitch__card-title">{{ card.title }}</h3>
             <p class="pitch__card-description">{{ card.description }}</p>

@@ -127,17 +127,18 @@
     margin-bottom: 1.5rem;
     justify-content: center;
 
-    .icon {
+    .icon-img {
       width: 40px;
       height: 40px;
-      background-color: #222222;
+      object-fit: cover;
       border-radius: 8px;
       border: 1px solid #333333;
-      transition: all 0.3s ease;
+      filter: grayscale(20%);
+      transition: transform 0.2s ease, filter 0.2s ease;
 
       &:hover {
-        background-color: #333333;
         transform: scale(1.05);
+        filter: grayscale(0%);
       }
     }
   }
@@ -213,7 +214,7 @@
     &__card-icons {
       gap: 0.3rem;
 
-      .icon {
+      .icon-img {
         width: 35px;
         height: 35px;
       }
