@@ -11,7 +11,7 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
   
   socialLinks = [
-    { name: 'instagram', url: 'https://instagram.com/yberhood' },
+    { name: 'instagram', url: 'https://instagram.com/kalacast.app' },
     { name: 'x', url: 'https://x.com/yberhood' }
   ];
 
