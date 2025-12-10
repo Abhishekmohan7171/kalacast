@@ -9,4 +9,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class MissionSummaryComponent {
 
+  openApp() {
+    try {
+      window.open('https://yberhood.web.app/home', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 }
